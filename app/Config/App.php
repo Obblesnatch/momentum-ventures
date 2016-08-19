@@ -22,12 +22,12 @@ Config::set('app', array(
     /**
      * The Website URL.
      */
-    'url' => 'http://www.novaframework.dev/',
+    'url' => 'http://momentum.ventures/',
 
     /**
     * The Administrator's E-mail Address.
     */
-    'email' => 'admin@novaframework.dev',
+    'email' => 'justinconabree@justinconabree.com',
 
     /**
      * The Website Path.
@@ -37,7 +37,7 @@ Config::set('app', array(
     /**
      * Website Name.
      */
-    'name' => 'Nova 3.0',
+    'name' => 'Momentum Ventures Trip Builder',
 
     /**
      * The default Template.
@@ -58,7 +58,7 @@ Config::set('app', array(
      * The default Timezone for your website.
      * http://www.php.net/manual/en/timezones.php
      */
-    'timezone' => 'Europe/London',
+    'timezone' => 'America/Toronto',
 
     /**
      * The Encryption Key.
