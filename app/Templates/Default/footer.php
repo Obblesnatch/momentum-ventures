@@ -27,6 +27,8 @@
 Assets::js([
 	'https://code.jquery.com/jquery-1.12.4.min.js',
     template_url('dist/js/bootstrap.min.js', 'Default'),
+    template_url('js/select2.min.js', 'Default'),
+    template_url('js/custom.js', 'Default')
 ]);
 
 echo $js; // Place to pass data / plugable hook zone

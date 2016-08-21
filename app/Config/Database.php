@@ -30,12 +30,12 @@ Config::set('database', array(
         'mysql' => array(
             'driver'    => 'mysql',
             'hostname'  => 'localhost',
-            'database'  => 'nova',
-            'username'  => 'nova',
-            'password'  => 'password',
+            'database'  => 'momentum_ventures',
+            'username'  => 'root',
+            'password'  => '',
             'prefix'    => PREFIX,
             'charset'   => 'utf8',
-            'collation' => 'utf8_general_ci',
+            'collation' => 'utf8_unicode_ci',
         ),
         'pgsql' => array(
             'driver'   => 'pgsql',

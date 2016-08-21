@@ -12,7 +12,7 @@ use Core\Config;
 
 use DB;
 
-use Request;
+use Request as Req;
 
 
 class Profiler
@@ -23,7 +23,7 @@ class Profiler
         $options = Config::get('profiler');
 
         // Calculate the variables.
-        $execTime = microtime(true) - Request::server('REQUEST_TIME_FLOAT');
+        $execTime = microtime(true) - Req::server('REQUEST_TIME_FLOAT');
 
         $elapsedTime = sprintf("%01.4f", $execTime);
 

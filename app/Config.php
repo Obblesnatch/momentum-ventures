@@ -18,7 +18,7 @@ define('CONFIG_STORE', 'files'); // Supported: "files", "database"
 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'momentum_test');
+define('DB_NAME', 'momentum_ventures');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('PREFIX', 'momentum_');
