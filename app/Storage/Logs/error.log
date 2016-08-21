@@ -1314,3 +1314,11 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2016-08-21 16:30:15] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Controllers\Ventures\Session' not found' in C:\wamp\www\momentum\app\Controllers\Ventures\Index.php:44
+Stack trace:
+#0 [internal function]: Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-08-21 16:30:16] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Controllers\Ventures\Session' not found' in C:\wamp\www\momentum\app\Controllers\Ventures\Index.php:44
+Stack trace:
+#0 [internal function]: Exception\Handler->handleShutdown()
+#1 {main} [] []

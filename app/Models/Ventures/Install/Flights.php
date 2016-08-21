@@ -50,7 +50,7 @@ class Flights {
 			$airports = $this->db->select('SELECT * FROM '.PREFIX.'airports');
 			$airportCount = count($airports);
 			foreach($airports as $airport) {
-				for($i = 0; $i < rand(8, 25); $i++) {
+				for($i = 0; $i < rand(0, 8); $i++) {
 					$flight = array(
 						'id' 			=> null,
 						'number' 		=> $this->generateFlightNumber(),

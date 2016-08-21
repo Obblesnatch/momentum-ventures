@@ -12,6 +12,7 @@ namespace App\Controllers\Ventures;
 use App\Controllers\Ventures\Ventures;
 use Core\View;
 use Helpers\Request;
+use Helpers\Session;
 
 class Index extends Ventures {
 	private $Req = null;
@@ -39,6 +40,13 @@ class Index extends Ventures {
 		}
 		
 		$this->_data['title'] = 'Trip Builder';
+		
+		//Handle errors
+		if(Session::exists('error')) {
+			Session::destroy('error');
+			$this->_data['error'] = true;
+			$this->_data['errorMessage'] = Session::pull('error_message');
+		}
 		
 		View::renderTemplate('header', $this->_getData());
 		View::renderTemplate('index', $this->_getData());

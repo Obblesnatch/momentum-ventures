@@ -8,19 +8,32 @@
 
 <?php if(isset($trip)):?>
 	<div class="trip-info">
-		Cost: <?php echo $trip['total'];?>
+		Total Cost: <?php echo $trip['total'];?>
 		<div class="trip-flights">
 			<?php foreach($trip['flights'] as $flight): ?>
-				<div class="flight-result">
-					<span>Flight Number: <?php echo $flight->number;?></span>
-					<span>Depart From: <?php echo $flight->depart_name.' ('.$flight->depart_code.')';?></span>
-					<span>Depart At: <?php echo date('H:i', strtotime($flight->departure));?></span>
-					<span>Arrive to: <?php echo $flight->arrival_name.' ('.$flight->arrival_code.')';?></span>
-					<span>Arrive At: <?php echo date('H:i', strtotime($flight->departure.' +'.$flight->duration.' hours'));?></span>
-					<form action="trip/delete" method="post">
-						<input type="hidden" name="flight_id" value="<?php echo $flight->id;?>" />
-						<input type="submit" value="Delete Flight" />
-					</form>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="flight-result">
+							<div class="col-md-3">
+								<span>Flight Number: <?php echo $flight->number;?></span>
+							</div>
+							<div class="col-md-3">
+								<span>Depart From: <?php echo $flight->depart_name.' ('.$flight->depart_code.')';?></span><br/>
+								<span>Depart At: <?php echo date('H:i', strtotime($flight->departure));?></span>
+							</div>
+							<div class="col-md-3">
+								<span>Arrive to: <?php echo $flight->arrival_name.' ('.$flight->arrival_code.')';?></span><br/>
+								<span>Arrive At: <?php echo date('H:i', strtotime($flight->departure.' +'.$flight->duration.' hours'));?></span>
+							</div>
+							<div class="col-md-3">
+								<span>Cost: <?php echo $flight->cost;?></span>
+								<form action="trip/delete" method="post">
+									<input type="hidden" name="flight_id" value="<?php echo $flight->id;?>" />
+									<input type="submit" value="Delete Flight" />
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			<?php endforeach;?>
 		</div>
@@ -29,6 +42,10 @@
 				<input type="submit" class="btn btn-danger" value="Clear Trip" />
 			</form>
 		</div>
+	</div>
+<?php else: ?>
+	<div class="col-md-12">
+		<h3>You have nothing in your trip</h3>
 	</div>
 <?php endif; ?>
 
@@ -61,19 +78,37 @@
 	<div class="grid">
 		<div class="grid-result" data-component="flight-results">
 			<?php if(isset($flights)): ?>
+				<?php $i = 0;?>
 				<?php foreach($flights as $flight):?>
-					<div class="flight-result">
-						<span>Flight Number: <?php echo $flight->number;?></span>
-						<span>Depart From: <?php echo $flight->depart_name.' ('.$flight->depart_code.')';?></span>
-						<span>Depart At: <?php echo date('H:i', strtotime($flight->departure));?></span>
-						<span>Arrive to: <?php echo $flight->arrival_name.' ('.$flight->arrival_code.')';?></span>
-						<span>Arrive At: <?php echo date('H:i', strtotime($flight->departure.' +'.$flight->duration.' hours'));?></span>
-						<form action="trip/post" method="post">
-							<input type="hidden" name="id" value="<?php echo $flight->id;?>" />
-							<input type="submit" value="Add Flight to Trip" />
-						</form>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="flight-result">
+								<div class="col-md-3">
+									<span>Flight Number: <?php echo $flight->number;?></span>
+								</div>
+								<div class="col-md-3">
+									<span>Depart From: <?php echo $flight->depart_name.' ('.$flight->depart_code.')';?></span><br/>
+									<span>Depart At: <?php echo date('H:i', strtotime($flight->departure));?></span>
+								</div>
+								<div class="col-md-3">
+									<span>Arrive to: <?php echo $flight->arrival_name.' ('.$flight->arrival_code.')';?></span><br/>
+									<span>Arrive At: <?php echo date('H:i', strtotime($flight->departure.' +'.$flight->duration.' hours'));?></span>
+								</div>
+								<div class="col-md-3">
+									<span>Cost: $<?php echo $flight->cost;?></span><br/>
+									<form action="trip/post" method="post">
+										<input type="hidden" name="id" value="<?php echo $flight->id;?>" />
+										<input type="submit" class="btn btn-primary" value="Add Flight to Trip" />
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
+					<?php $i++;?>
 				<?php endforeach;?>
+				<?php if($i === 0): ?>
+					<h3>There were no results for this selection</h3>
+				<?php endif;?>
 			<?php else: ?>
 			<h3>Please select departure airport and optional arrival airport</h3>
 			<?php endif; ?>
