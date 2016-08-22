@@ -14,10 +14,18 @@ use Helpers\Request;
 
 class Flights extends Model {
 	
+	/**
+	 * Flights constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 	}
 	
+	/**
+	 * @param null $id
+	 * @return array|bool
+	 * Gets flight(s) from database
+	 */
 	public function getFlights($id = null) {
 		$where = '';
 		$joinSelect = '`departure_airport`.`id` AS depart_id, `departure_airport`.`name` AS depart_name, `departure_airport`.`code` AS depart_code, `arrival_airport`.`id` AS arrival_id, `arrival_airport`.`name` AS arrival_name, `arrival_airport`.`code` AS arrival_code';

@@ -37,6 +37,10 @@ class Ventures extends Controller {
 		}
 	}
 	
+	/**
+	 * @return array
+	 * returns data set by this and children
+	 */
 	protected function _getData() {
 		return $this->_data;
 	}

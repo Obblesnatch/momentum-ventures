@@ -104,6 +104,10 @@ class Flights {
 		return $airports[rand(0, $total-1)]->id;
 	}
 	
+	/**
+	 * @return mixed
+	 * Returns a random airline for mock data
+	 */
 	public function getRandomAirline() {
 		$airlines = array('WestJet', 'Sunwing', 'AirCanada', 'KLM');
 		$index = rand(0, (count($airlines)-1));

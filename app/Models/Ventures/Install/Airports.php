@@ -63,7 +63,11 @@ class Airports {
 		//should be changed to return if data was entered into the database correctly as well
         return $create !== false;
     }
-    
+	
+	/**
+	 * @return array|mixed
+	 * Return an array of airports grabbed from the aero API
+	 */
     private function _getAirports() {
     	try {
     		$return = SimpleCurl::get($this->_aeroApiUrl, array('user_key' => $this->_aeroApiKey));

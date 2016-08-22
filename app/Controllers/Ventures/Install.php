@@ -15,10 +15,10 @@ use Helpers\Session;
 use Helpers\Url;
 
 class Install extends Controller {
-
-    /**
-     * This endpoint serves to launch all installation necessary to run this app. Then redirects to home
-     */
+	
+	/**
+	 * This endpoint serves to launch all installation necessary to run this app. Then redirects to home
+	 */
     public function index() {
         $i = 0;
 

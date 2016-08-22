@@ -13,6 +13,10 @@ namespace App\Controllers\Ventures;
 use Support\Facades\Response;
 
 class Flights extends Ventures {
+	/**
+	 * @return \Http\JsonResponse
+	 * Gets flight(s) data
+	 */
 	public function get() {
 		$flightModel = new \App\Models\Ventures\Flights();
 		$result = $flightModel->getFlights();

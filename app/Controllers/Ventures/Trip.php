@@ -17,6 +17,7 @@ use Support\Facades\Response;
 class Trip extends Controller {
 	
 	/**
+	 * @return \Http\JsonResponse
 	 * Get the session data for the trip
 	 */
 	public function get() {

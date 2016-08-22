@@ -21,6 +21,7 @@ class Airports extends Controller {
     }
 	
 	/**
+	 * @return \Http\JsonResponse
 	 * Return json on the airports that match the query
 	 */
     public function get() {
