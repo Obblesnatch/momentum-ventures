@@ -19,9 +19,9 @@ define('CONFIG_STORE', 'files'); // Supported: "files", "database"
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'momentum_ventures');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('PREFIX', 'momentum_');
+define('DB_USER', 'momVentures');
+define('DB_PASS', '9QgBucL[oiX#');
 
+define('PREFIX', 'momentum_');
 
 define('SESSION_PREFIX', 'momentum_');

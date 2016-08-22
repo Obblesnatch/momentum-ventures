@@ -10,6 +10,7 @@
 namespace App\Models\Ventures;
 
 use Core\Model;
+use Helpers\Request;
 
 class Airports extends Model {
 	/**
@@ -25,6 +26,10 @@ class Airports extends Model {
 		 * Should change this to check for destinations.
 		 * User would select departure airport and then the arrival airport list would be fetched, looking at all the flights leaving from the departure and where they're going to
 		 */
+		if(is_null($id)) {
+			$id = Request::get('id');
+		}
+		
     	if($id) {
 			return $this->db->select('SELECT * FROM '.PREFIX.'airports WHERE id = '.$id);
 		}else {

@@ -23,7 +23,7 @@ define('ROOTDIR', realpath(__DIR__.'/../') .DS);
  *     development
  *     production
  */
-define('ENVIRONMENT', 'development');
+define('ENVIRONMENT', 'production');
 
 /** Composer installation check. */
 if (! file_exists(ROOTDIR .'vendor/autoload.php')) {
