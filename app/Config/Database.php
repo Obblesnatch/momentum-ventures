@@ -35,7 +35,7 @@ Config::set('database', array(
             'password'  => '',
             'prefix'    => PREFIX,
             'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
+            'collation' => 'utf8_general_ci',
         ),
         'pgsql' => array(
             'driver'   => 'pgsql',

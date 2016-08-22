@@ -24,7 +24,7 @@ class Flights extends Model {
 		$sql = 'SELECT '.PREFIX.'flights.*, '.$joinSelect.'  FROM '.PREFIX.'flights INNER JOIN '.PREFIX.'airports AS departure_airport ON '.PREFIX.'flights.from_airport = departure_airport.id INNER JOIN '.PREFIX.'airports AS arrival_airport ON '.PREFIX.'flights.to_airport = arrival_airport.id';
 		if($id) {
 			$where = ' WHERE '.PREFIX.'flights.id = '.$id;
-		} else {
+		} elseif($departFrom = Request::get('depart_from')) {
 			$departFrom = Request::get('depart_from');
 			$where = ' WHERE '.PREFIX.'flights.from_airport = '.$departFrom;
 			
@@ -35,6 +35,8 @@ class Flights extends Model {
 			}
 			
 			// Here is where we would apply filters for departure dates and/or arrival dates. As there are only one days worth of values in the DB, we can't do this
+		}else {
+			return false;
 		}
 		$sql .= $where;
 		$sql .= ' ORDER BY '.PREFIX.'flights.departure ASC';

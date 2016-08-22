@@ -92,7 +92,7 @@ class Flights {
 		$beginningOfDay = strtotime('midnight');
 		$endOfDay = strtotime('tomorrow', $beginningOfDay) - 1;
 		$addOn = rand($beginningOfDay, $endOfDay);
-		$time = time()+$addOn;
+		$time = time()+(time() - $addOn);
 		return date(DATE_ISO8601, $time);
 	}
 	

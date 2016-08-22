@@ -12,6 +12,7 @@ namespace App\Controllers\Ventures;
 use App\Core\Controller;
 use Helpers\Session;
 use Helpers\Url;
+use Support\Facades\Response;
 
 class Trip extends Controller {
 	
@@ -23,9 +24,9 @@ class Trip extends Controller {
 		
 		if(!$tripModel->get()) {
 			Session::set('error', true);
-			Session::set('error_message', 'Could not get the trip information');
+			Session::set('error_message', 'No trip information available');
 		}
-		Url::redirect('/');
+		return Response::json($tripModel->get());
 	}
 	
 	/**

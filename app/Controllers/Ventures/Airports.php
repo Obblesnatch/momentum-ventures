@@ -10,35 +10,21 @@
 namespace App\Controllers\Ventures;
 
 use Core\Controller;
+use Support\Facades\Response;
 
 class Airports extends Controller {
-
-    private $_airports;
-    private $_sortField = 'namee';
-    private $_sortDir = 'ASC';
-    private $_sortOrder = '';
-
-    private $_availableSortFields = array('id', 'code', 'name', 'city', 'country');
-    private $_availableSortDirs = array('ASC', 'DESC');
-
+	/**
+	 * Airports constructor.
+	 */
     public function __construct() {
-        parent::__constuct();
-
-        $this->_airports = new \App\Models\Ventures\Airports();
+        parent::__construct();
     }
-
-    public function get($id = null, $sort = null, $dir = null) {
-        
-        if($sort && in_array($sort, $this->_availableSortFields)) {
-            $this->_sortField = $sort;
-        }
-        
-        if($dir && in_array($dir, $this->_availableSortDirs)) {
-            $this->_sortDir = $dir;
-        }
-        
-        $this->_sortOrder = $this->_sortField.' '.$this->_sortDir;
-		
-        $data['airports'] = $this->_airports->getAirports($id);
+	
+	/**
+	 * Return json on the airports that match the query
+	 */
+    public function get() {
+		$_airportModel = new \App\Models\Ventures\Airports();
+		return Response::json($_airportModel->getAirports());
     }
 }

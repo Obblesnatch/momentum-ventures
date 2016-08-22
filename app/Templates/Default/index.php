@@ -15,7 +15,8 @@
 					<div class="col-md-12">
 						<div class="flight-result">
 							<div class="col-md-3">
-								<span>Flight Number: <?php echo $flight->number;?></span>
+								<span>Flight Number: <?php echo $flight->number;?></span><br/>
+								<span>Airline: <?php echo $flight->airline;?></span>
 							</div>
 							<div class="col-md-3">
 								<span>Depart From: <?php echo $flight->depart_name.' ('.$flight->depart_code.')';?></span><br/>
@@ -84,7 +85,8 @@
 						<div class="col-md-12">
 							<div class="flight-result">
 								<div class="col-md-3">
-									<span>Flight Number: <?php echo $flight->number;?></span>
+									<span>Flight Number: <?php echo $flight->number;?></span><br/>
+									<span>Airline: <?php echo $flight->airline;?></span>
 								</div>
 								<div class="col-md-3">
 									<span>Depart From: <?php echo $flight->depart_name.' ('.$flight->depart_code.')';?></span><br/>

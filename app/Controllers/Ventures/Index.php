@@ -52,4 +52,12 @@ class Index extends Ventures {
 		View::renderTemplate('index', $this->_getData());
 		View::renderTemplate('footer', $this->_getData());
 	}
+	
+	/**
+	 * Route for testing code. Production version should either block this route or require authorization
+	 */
+	public function test() {
+		$model = new \App\Models\Ventures\Install\Flights();
+		$model->generateDateTime();
+	}
 }
