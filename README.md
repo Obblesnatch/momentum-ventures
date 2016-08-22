@@ -21,9 +21,34 @@ The installation endpoint could be improved to look at versioning and only insta
 
 ## Installation
 
+#### Setup
+
+Once you've downloaded all the files or cloned the repo to the folder on your server, add the following to your **virtual host file**
+```
+<VirtualHost *:80>
+    ServerAdmin justinconabree@justinconabree.com
+    DocumentRoot "C:\wamp\www\momentum\public"
+    ServerName momentum.venture
+
+    <Directory "C:\wamp\www\momentum\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+```
+
+And the following to your **host file**
+```
+127.0.0.1		momentum.ventures
+```
+> **Note any alterations to the paths or domain can be done in app/Config/App.php**
+
+#### Setting up the base data
 It's simple! Just head on over to the **/install** endpoint. The app takes care of the rest.
 
-> **Note any alterations required to the configuration can be done in the files in app/Config/ or in app/Config.php**
+> **Note any alterations to the database configuration can be done in app/Config.php and app/Config/Database.php**
 
 ## Documentation
 ###### App sepcific documentation

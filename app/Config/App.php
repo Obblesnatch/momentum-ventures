@@ -22,7 +22,7 @@ Config::set('app', array(
     /**
      * The Website URL.
      */
-    'url' => 'http://tripbuilder.justinconabree.com/',
+    'url' => 'http://momentum.ventures/',
 
     /**
     * The Administrator's E-mail Address.
